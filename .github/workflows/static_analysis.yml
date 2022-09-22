@@ -16,7 +16,6 @@ jobs:
         env:
           FOLDERS: >
             src/azure
-            src/azure-devops
         run: |
           pids=()
 
