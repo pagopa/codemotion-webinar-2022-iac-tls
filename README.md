@@ -13,7 +13,7 @@
 
 ```sh
 # 0) create terraform backend
-./init.sh apply DevOpsLab
+./init.sh DevOpsLab
 ```
 
 ```sh
@@ -27,15 +27,15 @@
 ```
 
 ```sh
-# 2) create key-vault and access policy
-./terraform.sh apply prod \
-  -target=module.key_vault \
-  -target=azurerm_key_vault_access_policy.adgroup_admin
+# 2) check delegation
+nslookup health.tlsiac.pagopa.it
 ```
 
 ```sh
-# 3) check delegation
-nslookup health.tlsiac.pagopa.it
+# 3) create key-vault and access policy
+./terraform.sh apply prod \
+  -target=module.key_vault \
+  -target=azurerm_key_vault_access_policy.adgroup_admin
 ```
 
 ```sh

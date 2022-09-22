@@ -1,6 +1,6 @@
 module "key_vault" {
   source                     = "git::https://github.com/pagopa/azurerm.git//key_vault?ref=v2.19.0"
-  name                       = "${local.project}-test-kv"
+  name                       = "${local.project}-kv"
   location                   = var.location
   resource_group_name        = azurerm_resource_group.resources_rg.name
   tenant_id                  = data.azurerm_client_config.current.tenant_id
